@@ -1,0 +1,153 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--index: calc(1vw + 1vh);
+	--color-reverse: #948572;
+	--color-text: #000000;
+	--accents: #F93737;
+	--number: #4B4827; 
+}
+
+@font-face {
+	font-family: Comfortaa;
+	src: url(../fonts/Comfortaa-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: Kurale;
+	src: url(../fonts/Kurale-Regular.ttf);
+}
+
+.img, .h1, .p, .frame {
+	will-change: transform;
+}
+
+h1 {
+	font-family: Comfortaa;
+}
+
+h2, p {
+	font-family: Kurale;
+}
+
+h2 {
+	font-size: calc(var(--index) * 2);
+	margin-right: calc(var(--index) * 2.25);
+}
+
+p {
+	font-size: calc(var(--index) * 1.2);
+}
+
+body {
+	background-color: #FFF0DD;
+	color: #000000;
+	font-family: Kurale;
+}
+
+.container {
+	max-width: calc(var(--index) * 50);
+	margin-left: auto;
+  margin-right: auto;
+}
+
+.name {
+	font-size: calc(var(--index) * 1.5);
+	text-align: center;
+	margin: 0px;
+	margin-top: calc(var(--index) * 7.45);
+	margin-bottom: calc(var(--index) * 7.45);
+	transform: translateY(-30px);
+	opacity: 0;
+	transition: all 0.8s ease 0s;
+}
+
+.name._active {
+	transform: translateY(0px);
+	opacity: 1;
+	transition: all 0.8s ease 0.3s;
+}
+
+.img {
+	position: absolute;
+	margin-top: calc(var(--index) * 2.9);
+	left: calc(var(--index) * 2);
+	height: calc(var(--index) * 20);
+	width: calc(var(--index) * 20);
+	transform: scale(0);
+	transition: all 0.8s ease 0s;
+}
+
+.img._active {
+	transform: scale(1);
+	transition: all 0.8 ease 0.4s;
+}
+
+.img-position {
+	margin: 0;
+}
+
+.positioning {
+	float: right;
+}
+
+.frame {
+	display: flex;
+	width: calc(var(--index) * 30);
+	border-top: 3px solid var(--number);
+	border-bottom: 3px solid var(--number);
+	margin-bottom: calc(var(--index) * 7.36);
+	padding-top: calc(var(--index) * 5);
+	padding-bottom: calc(var(--index) * 7.7);
+	transform: translateY(-30px);
+	opacity: 0;
+	transition: all 0.8s ease 0s;
+}
+
+.frame._active {
+	transform: translateY(0px);
+	opacity: 1;
+	transition: all 0.8 ease 0.3s;
+}
+
+.question {
+	margin-bottom: calc(var(--index) * 1.5);
+	margin-top: calc(var(--index) * 0.3);
+}
+
+.question span {
+	color: var(--accents);
+}
+
+.answer span {
+	color: var(--accents);
+}
+
+.color-background{
+	color: var(--color-reverse);
+}
+
+.color-background span {
+	color: #92A282;
+}
+
+@media screen and (max-width: 320px),
+screen and (max-width: 1280px) {
+	.positioning {
+		float: none;
+	}
+
+	.frame {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	.img {
+		display: none;
+	}
+}
